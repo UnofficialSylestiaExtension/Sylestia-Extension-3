@@ -1,0 +1,31 @@
+{
+
+    "manifest_version": 3,
+    "name": "Sylestia Extension 3",
+    "version": "1.0.0",
+  
+    "description": "Accessibilty and Quality-of-Life extension for the pet site Sylesia.com. Adds colors to nurture buttons and a simple trait randomize button to the generator.",
+  
+    "content_scripts": [
+      {
+        "matches": [
+            "*://www.sylestia.com/nurture/*",   // nurture grounds
+            "*://www.sylestia.com/view/pets/*"  // pet profile view
+            ],
+        "css": ["colorize-nurture.css"],
+        "js": ["colorize-nurture.js"]
+      },
+      {
+        "matches": ["*://www.sylestia.com/generator/"],
+        "js": ["randomizeTraitButton.js"]
+      }
+    ],
+
+    // manifest version 3 extensions require an ID in firefox
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{7d9e4b13-cc75-4479-bab8-e50ee5656dd0}"
+        }
+    }
+  }
+  
