@@ -5,8 +5,11 @@ Accessibility and Quality-of-Life browser extension for the pet site game Sylest
 While the extension is still unverified, you can install an unverified version of this extension.
 You will need to either download the correct `.zip` file for your browser, or all of the code in the repository.
 
+ - `firefox.zip` should work for Firefox and Safari
+ - `chrome.zip` should work for Chromium-based browsers (Chrome, Edge, Opera)
+
 ## Firefox:
-Go to `about:debugging` and click on "This Firefox" in the sidebar. Under "Temporary Extensions" choose "Load Temporary Add-on..." and select either `sylestia3.zip` or any code file (`manifest.json`, `colorize-nurture.js`, etc.). If you choose a code file, you will have to first un-comment out the "browser_specific_settings" section in `manifest.json`.
+Go to `about:debugging` and click on "This Firefox" in the sidebar. Under "Temporary Extensions" choose "Load Temporary Add-on..." and select either `firefox.zip` or any code file (`manifest.json`, `colorize-nurture.js`, etc.). If you choose a code file, you will have to first un-comment out the `"browser_specific_settings"` section in `manifest.json`.
 
 You will then need to give the add-on permissions once you go to Sylestia.com. At the top right, the plugin icon should have a notification asking for permissions for the Sylestia Extension 3.
 
