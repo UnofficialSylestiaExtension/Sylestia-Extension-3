@@ -7,20 +7,25 @@
   
     "content_scripts": [
       {
-        "matches": [
-            "*://www.sylestia.com/stables/*"
-            ],
-        "js": ["mass-release.js"]
+        "matches": ["*://www.sylestia.com/stables/*"],
+        "js": ["mass-release-bootstrap.js"]
+      }
+    ],
+
+  // manifest version 3 extensions require an ID in firefox
+  // comment out this section for Chromium browsers (Chrome, Edge, Opera)
+  // uncomment this section for Firefox & Safari
+  //"browser_specific_settings": {
+  //    "gecko": {
+  //        "id": "{7d9e4b13-cc75-4479-bab8-e50ee5656dd0}"
+  //    }
+  //},
+
+    "web_accessible_resources": [
+      {
+        "resources": ["mass-release-script.js"],
+        "matches": ["*://www.sylestia.com/*"]
       }
     ]
-
-    // manifest version 3 extensions require an ID in firefox
-    // comment out this section for Chrome browsers
-    // uncomment this section for Firefox browsers
-    //"browser_specific_settings": {
-    //    "gecko": {
-    //        "id": "{7d9e4b13-cc75-4479-bab8-e50ee5656dd0}"
-    //    }
-    //}
 }
   
