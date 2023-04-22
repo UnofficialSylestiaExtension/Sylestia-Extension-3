@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Sylestia Extension 3",
-    "version": "2.0.0",
+    "version": "2.2.0",
   
     "description": "Quality-of-Life extension for the pet site Sylesia.com. Adds a mass release button to the stables.",
   
@@ -9,6 +9,10 @@
       {
         "matches": ["*://www.sylestia.com/stables/*"],
         "js": ["mass-release-bootstrap.js"]
+      },
+      {
+        "matches": ["*://www.sylestia.com/explore/zone/*"],
+        "js": ["z1-explore-hotkey-bootstrap.js"]
       }
     ],
 
@@ -23,7 +27,7 @@
 
     "web_accessible_resources": [
       {
-        "resources": ["mass-release-script.js"],
+        "resources": ["mass-release-script.js", "z1-explore-hotkey-script.js"],
         "matches": ["*://www.sylestia.com/*"]
       }
     ]
