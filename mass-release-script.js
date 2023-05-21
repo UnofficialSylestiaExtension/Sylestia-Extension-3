@@ -182,7 +182,7 @@
 
    // patch the function stall_select to allow for selecting for mass release:
    stall_select = function stall_select(stable, tab, stall) {
-/* SYLESTIA CODE */
+      /* SYLESTIA CODE */
       if (lockout_stable == 0) {
          if (mass_move == 1) {
             var element1 = document.getElementById("stable" + stable + "tab" + tab + "stall" + stall + "_id");
@@ -217,8 +217,8 @@
                }
             }
          }
-/* END SYLESTIA CODE */
-/* EXTENSION 3 PATCH */
+         /* END SYLESTIA CODE */
+         /* EXTENSION 3 PATCH */
          else if (mass_release) {
             var stall_info = new pet_stall_info(stable, tab, stall);
             if (stall_info.id != 0) {
@@ -231,8 +231,8 @@
                document.getElementById("mass_release_number").textContent = display;
             }
          }
-/* END EXTENSION 3 PATCH */
-/* RESUME SYLESTIA CODE */
+         /* END EXTENSION 3 PATCH */
+         /* RESUME SYLESTIA CODE */
          else {
             //REMOVE SELECTION
             if (stable == selected_stable && tab == selected_tab && stall == selected_stall) {
@@ -248,10 +248,10 @@
                   selected_pet_name = 0;
                   selected_pet_level = 0;
                   selected_pet_info = 0;
-/* END SYLESTIA CODE - REMOVE HTML ASSIGNMENT */
+               /* END SYLESTIA CODE - REMOVE HTML ASSIGNMENT */
                   document.getElementById("div_selection1").textContent = "None Selected";
                   document.getElementById("div_selection2").textContent = "\u00a0"; // &nbsp;
-/* RESUME SYLESTIA CODE */
+               /* RESUME SYLESTIA CODE */
                }
             }
             //SWITCH SLOTS
@@ -275,9 +275,8 @@
                      selected_stall = stall;
                      selected_pet_id = element1.value;
                      selected_pet_name = element2.value;
-/* END SYLESTIA CODE - REMOVE HTML ASSIGNMENT */
+                  /* END SYLESTIA CODE - REMOVE HTML ASSIGNMENT */
                      selected_pet_level = element4.textContent;
-                     //document.getElementById("div_selected_pet").innerHTML = element3.innerHTML;
                      {
                         let div_selected_pet = document.getElementById("div_selected_pet");
                         let oldchild = div_selected_pet.children[0];
@@ -285,7 +284,6 @@
                         let child = element3.children[0];
                         if  (child) div_selected_pet.appendChild(child.cloneNode(true));
                      }
-                     //document.getElementById("div_selection1").innerHTML = '<a class="textlink" href="/view/pets/?petid=' + selected_pet_id + '" target="_blank" />' + selected_pet_name + '</a>';
                      {
                         let link1 = document.createElement('a');
                         link1.className = "textlink";
@@ -296,7 +294,7 @@
                         document.getElementById("div_selection1").appendChild(link1);
                      }
                      document.getElementById("div_selection2").textContent = "(Stable ID #" + stable + ", Tab " + tab + ", Stall " + stall + ")";
-/* RESUME SYLESTIA CODE */
+                  /* RESUME SYLESTIA CODE */
                   }
                }
             }
