@@ -248,9 +248,10 @@
                   selected_pet_name = 0;
                   selected_pet_level = 0;
                   selected_pet_info = 0;
-
-                  document.getElementById("div_selection1").innerHTML = "None Selected";
-                  document.getElementById("div_selection2").innerHTML = "&nbsp;";
+               /* END SYLESTIA CODE - REMOVE HTML ASSIGNMENT */
+                  document.getElementById("div_selection1").textContent = "None Selected";
+                  document.getElementById("div_selection2").textContent = "\u00a0"; // &nbsp;
+               /* RESUME SYLESTIA CODE */
                }
             }
             //SWITCH SLOTS
@@ -274,11 +275,26 @@
                      selected_stall = stall;
                      selected_pet_id = element1.value;
                      selected_pet_name = element2.value;
-                     selected_pet_level = element4.innerHTML;
-                     document.getElementById("div_selected_pet").innerHTML = element3.innerHTML;
-
-                     document.getElementById("div_selection1").innerHTML = '<a class="textlink" href="/view/pets/?petid=' + selected_pet_id + '" target="_blank" />' + selected_pet_name + '</a>';
-                     document.getElementById("div_selection2").innerHTML = "(Stable ID #" + stable + ", Tab " + tab + ", Stall " + stall + ")";
+                  /* END SYLESTIA CODE - REMOVE HTML ASSIGNMENT */
+                     selected_pet_level = element4.textContent;
+                     {
+                        let div_selected_pet = document.getElementById("div_selected_pet");
+                        let oldchild = div_selected_pet.children[0];
+                        if (oldchild) oldchild.remove();
+                        let child = element3.children[0];
+                        if  (child) div_selected_pet.appendChild(child.cloneNode(true));
+                     }
+                     {
+                        let link1 = document.createElement('a');
+                        link1.className = "textlink";
+                        link1.href = "/view/pets/?petid=" + selected_pet_id;
+                        link1.target = "_blank"
+                        link1.textContent = selected_pet_name;
+                        document.getElementById("div_selection1").textContent = "";
+                        document.getElementById("div_selection1").appendChild(link1);
+                     }
+                     document.getElementById("div_selection2").textContent = "(Stable ID #" + stable + ", Tab " + tab + ", Stall " + stall + ")";
+                  /* RESUME SYLESTIA CODE */
                   }
                }
             }
