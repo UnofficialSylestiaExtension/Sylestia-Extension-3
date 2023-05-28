@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Sylestia Extension 3",
-    "version": "2.3.0",
+    "version": "2.3.1",
   
     "description": "Quality-of-Life extension for the pet site Sylesia.com. Adds a mass release button to the stables and hotkeys to the old explore zones.",
   
